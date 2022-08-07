@@ -12,6 +12,9 @@
 	// since there's no dynamic data here, we can prerender
 	// it so that it gets served as a static asset in prod
 	export const prerender = true;
+	import Card from '../lib/Card.svelte';
+  let title = "Finding customers for your new business";
+  let content = "Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first"
 </script>
 
 <svelte:head>
@@ -19,8 +22,8 @@
 	<meta name="description" content="About this app" />
 </svelte:head>
 
-<div class="content">
-	<h1>About this app</h1>
+<div class="flex flex-col max-w-screen gap-2">
+	<h1 class="flex font-bold text-red-700 items-center justify-center">About this app</h1>
 
 	<p>
 		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
@@ -39,12 +42,27 @@
 		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
 		it with JavaScript disabled!
 	</p>
-</div>
 
-<style>
-	.content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-	}
-</style>
+	<div class="flex">
+		<div class="bg-white rounded-xl mx-auto space-y-2 shadow-md py-8 px-8 inline-flex">
+			<div class="space-y-2 text-center">
+				<div class="space-y-0.5">
+					<p class="font-semibold text-lg text-black mb-2">Erin Lindford</p>
+					<p class="font-medium pb-3 text-gray-500">Product Engineer</p>
+				</div>
+				<button
+					class="border rounded-full font-semibold border-purple-200 text-sm 	py-1 px-4 ring-purple-600 ring-opacity-40 text-purple-600 hover:border-transparent
+				hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2"
+				>
+					Message
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="container flex flex-col justify-center">
+		<Card {title} {content}/>
+	</div>
+
+
+</div>
