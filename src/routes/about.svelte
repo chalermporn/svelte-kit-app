@@ -13,8 +13,9 @@
 	// it so that it gets served as a static asset in prod
 	export const prerender = true;
 	import Card from '../lib/Card.svelte';
-  let title = "Finding customers for your new business";
-  let content = "Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first"
+	let title = 'Finding customers for your new business';
+	let content =
+		'Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first';
 </script>
 
 <svelte:head>
@@ -61,8 +62,6 @@
 	</div>
 
 	<div class="container flex flex-col justify-center">
-		<Card {title} {content}/>
+		<Card {title} {content} />
 	</div>
-
-
 </div>

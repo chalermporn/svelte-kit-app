@@ -29,4 +29,3 @@
 	</h2>
 	<Counter />
 </section>
-
