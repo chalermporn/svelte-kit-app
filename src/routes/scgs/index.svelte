@@ -10,14 +10,22 @@
 	}
 </script>
 
+<svelte:head>
+	<title>SCG</title>
+	<meta name="description" content="SCG this app" />
+</svelte:head>
+
 <h1 class="flex justify-center items-center">Pokemon</h1>
 
 {#await getPokemon()}
 	<p>Loading...</p>
 {:then pokemon}
-	{#each pokemon as pokemon}
-		<li>{pokemon.name}</li>
-	{/each}
+	<ul>
+		<li class="font-bold">list</li>
+		{#each pokemon as pokemon}
+			<li>{pokemon.name}</li>
+		{/each}
+	</ul>
 {/await}
 
 <style>
